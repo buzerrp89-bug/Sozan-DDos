@@ -1,13 +1,21 @@
 package main
 
 import (
+	"os"
+	"sys"
 	"flag"
 	"fmt"
 	"io"
 	"net/http"
 	"sync"
 	"time"
+	"fade"
 )
+
+os.system('clear')
+logo = """
+
+
 
 type Result struct { // Struct untuk menyimpan hasil setiap request
 	StatusCode int
