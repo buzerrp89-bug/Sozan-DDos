@@ -15,6 +15,9 @@ import (
 os.system('clear')
 logo = """
 
+
+
+"""
 faded_text = fade.fire(logo)
 print(faded_text)
 while attemps < 100:
@@ -22,7 +25,7 @@ while attemps < 100:
     password = input("\033[32m┗> Enter your password:\033[30m")
 
     if username == 'makce' and password == 'makce':
-        print("\033[48;5;3m•••⟩⟩ PANJI-PANJI HITAM ARROYA ...!!\033[0m")
+        print("\033[48;5;3m•••⟩⟩ Black soldiers for Palestine ...!!\033[0m")
         break
     else:
         print('Incorrect credentials. Check if you have Caps lock on and try again.')
