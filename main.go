@@ -1,26 +1,13 @@
 package main
 
 import (
-	"os"
-	"sys"
 	"flag"
 	"fmt"
 	"io"
 	"net/http"
 	"sync"
 	"time"
-	"fade"
-)
-
-os.system('clear')
-logo = """
-
-▓╔══════════╗
-╚═══════════╝
-
-"""
-faded_text = fade.fire(logo)
-print(faded_text)
+	
 while attemps < 100:
     username = input("\033[32m┏> Enter your username:\033[30m")
     password = input("\033[32m┗> Enter your password:\033[30m")
@@ -143,6 +130,9 @@ func main() {
 			if r.StatusCode >= 200 && r.StatusCode < 300 {
 				success++
 				totalTime += r.Duration
+				go flood() // Start threads
+		        fmt.Printf("\rThreads [%.0f] are ready", float64(i+1))
+		        os.Stdout.Sync()
 				if *verbose {
 					fmt.Printf("[SUCCESS] Status: %d (Duration: %s)\n", r.StatusCode, r.Duration.Round(time.Millisecond))
 				}
